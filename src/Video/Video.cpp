@@ -10,16 +10,16 @@ Video::~Video(){
 
 void Video::setup(){
     rgbSplit.load("rgbSplit.vert", "rgbSplit.frag");
-    player.load("/home/william/Videos/Frog.mp4");
+    player.load("/home/william/Videos/snakeboard.mp4");
     texture.allocate(player.getWidth(), player.getHeight(), GL_RGB);
     ofEnableAlphaBlending();
     player.play();
-    player.setSpeed(0.5);   //Nees to be the speed of the buffer filler to get forward 
+    player.setSpeed(1.0);   //Nees to be the speed of the buffer filler to get forward 
 }
 int mod = 0;
 void Video::update(){
         player.update();
-        if(player.isFrameNew() && (mod % 10 == 0)){
+        if(player.isFrameNew()){
             ofFbo buffer;
             buffer.allocate(player.getWidth(), player.getHeight());
             buffer.begin();

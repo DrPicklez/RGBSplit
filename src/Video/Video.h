@@ -34,7 +34,7 @@ public:
     ofVec3f playhead, playheadTarget;
     float speed = 0.01;
     int timeIncMillis = 0;
-    int maxBuffers = 100;
+    int maxBuffers = 200;
     ofShader rgbSplit;
     
 
